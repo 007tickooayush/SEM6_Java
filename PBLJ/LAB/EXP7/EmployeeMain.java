@@ -79,16 +79,17 @@ class Manage{
                 case 1:
                     emp = new Employee();
                     p.format("--%-30s","ENTER EMPLOYEE ID: ");
-                    emp.employeeID = Integer.parseInt(String.valueOf(s.nextLine().charAt(0)));
+                    emp.setEmployeeID(s.nextInt());
+                    s.nextLine();
 
                     p.format("--%-30s","ENTER EMPLOYEE NAME: ");
-                    emp.name = s.nextLine();
+                    emp.setName(s.nextLine());
 
                     p.format("--%-30s","ENTER EMPLOYEE SALARY: ");
-                    emp.salary = s.nextDouble();
+                    emp.setSalary(s.nextDouble());
 
                     p.format("--%-30s","ENTER EMPLOYEE AGE: ");
-                    emp.age = s.nextInt();
+                    emp.setAge(s.nextInt());
 
                     empList.add(emp);
                     break;
