@@ -1,0 +1,32 @@
+try{
+            FileOutputStream file = new FileOutputStream("dat.txt");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(file);
+
+            for(Employee e:empList){
+                objectOutputStream.writeObject(e);
+            }
+
+            objectOutputStream.close();
+            file.close();
+        }catch (IOException e){
+            e.getLocalizedMessage();
+        }
+
+
+        try {
+            FileInputStream fileInputStream = new FileInputStream("dat.txt");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
+            for(Employee e:empList){
+                e =  (Employee)objectInputStream.readObject();
+                p.println("Age: "+e.age);
+                p.println("Name: "+e.name);
+            }
+
+            fileInputStream.close();
+            objectInputStream.close();
+
+
+        }catch(IOException | ClassNotFoundException e){
+            e.getLocalizedMessage();
+        }
